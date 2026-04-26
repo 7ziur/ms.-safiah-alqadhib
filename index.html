@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تحدي العلوم الشامل | المعلمة صفية القضيب</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#f5c842;--gold2:#e6a800;
+  --purple:#7c3aed;--purple2:#5b21b6;
+  --pink:#ec4899;--teal:#14b8a6;
+  --dark:#0f0a1e;--card:#1a1035;
+}
+body{font-family:'Tajawal',sans-serif;direction:rtl;background:var(--dark);color:#fff;min-height:100vh}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,#0f0a1e 0%,#1a0838 40%,#0d1a3a 100%);
+  padding:2.5rem 1.5rem 1.5rem;text-align:center;
+  position:relative;overflow:hidden;
+  border-bottom:2px solid #2d1b69;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at 30% 50%,rgba(124,58,237,.25) 0%,transparent 60%),
+    radial-gradient(ellipse at 70% 30%,rgba(20,184,166,.15) 0%,transparent 50%);
+  pointer-events:none;
+}
+.stars{position:absolute;inset:0;pointer-events:none;}
+.star{position:absolute;background:#fff;border-radius:50%;animation:twinkle 2s infinite alternate;}
+@keyframes twinkle{0%{opacity:.2}100%{opacity:.9}}
+
+.badge-top{
+  display:inline-block;
+  background:linear-gradient(90deg,#7c3aed,#ec4899);
+  color:#fff;font-size:14px;font-weight:700;
+  padding:5px 22px;border-radius:20px;margin-bottom:.85rem;
+  letter-spacing:.5px;
+}
+.hero h1{
+  font-size:clamp(2.2rem,9vw,4rem);font-weight:900;line-height:1.1;margin-bottom:.5rem;
+  background:linear-gradient(135deg,#f5c842,#fff 50%,#a78bfa);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-sub{font-size:1.05rem;color:#c4b5fd;margin-bottom:.3rem;}
+.hero-name{
+  display:inline-block;
+  background:linear-gradient(90deg,#f5c842,#fb923c);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  font-size:1.2rem;font-weight:800;
+}
+.motto{
+  background:linear-gradient(90deg,rgba(124,58,237,.3),rgba(236,72,153,.3));
+  border:1px solid rgba(124,58,237,.5);border-radius:12px;
+  padding:.65rem 1.3rem;margin:.85rem auto;max-width:480px;
+  font-size:1rem;color:#e9d5ff;font-weight:600;
+}
+
+/* MAIN WRAPPER */
+.wrap{padding:1.75rem 1rem;max-width:920px;margin:0 auto;}
+
+/* CTA BAR */
+.cta-bar{
+  background:linear-gradient(135deg,rgba(124,58,237,.2),rgba(236,72,153,.2));
+  border:1px solid rgba(245,200,66,.3);border-radius:14px;
+  padding:1rem;text-align:center;margin-bottom:1.75rem;
+}
+.cta-bar p{color:var(--gold);font-size:1.1rem;font-weight:800;}
+.cta-bar small{color:#c4b5fd;font-size:.88rem;}
+
+/* TABS */
+.tabs{display:flex;gap:8px;margin-bottom:1.75rem;flex-wrap:wrap;}
+.tab{
+  flex:1;min-width:130px;padding:.7rem .5rem;
+  border-radius:12px;border:2px solid transparent;
+  font-family:'Tajawal',sans-serif;font-size:1rem;font-weight:700;
+  cursor:pointer;transition:.2s;color:#c4b5fd;background:var(--card);text-align:center;
+}
+.tab:hover{border-color:#7c3aed;color:#fff;}
+.tab.active-tab{background:linear-gradient(135deg,#7c3aed,#5b21b6);border-color:#a78bfa;color:#fff;}
+.tab-icon{font-size:1.5rem;display:block;margin-bottom:4px;}
+
+/* PANELS */
+.panel{display:none;animation:fadeIn .3s;}
+.panel.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+.section-title{
+  font-size:1.35rem;font-weight:800;color:var(--gold);
+  display:flex;align-items:center;gap:8px;margin-bottom:1.1rem;
+  border-right:4px solid var(--gold);padding-right:10px;
+}
+
+/* READING */
+.read-card{
+  background:var(--card);border:1px solid rgba(124,58,237,.4);
+  border-radius:16px;padding:1.4rem;margin-bottom:1rem;
+}
+.read-card h3{
+  color:#a78bfa;font-size:1.05rem;font-weight:700;
+  margin-bottom:.8rem;border-bottom:1px solid rgba(124,58,237,.3);padding-bottom:.55rem;
+}
+.passage{
+  background:rgba(255,255,255,.04);border-radius:10px;padding:1.1rem;
+  font-size:.97rem;line-height:2;color:#e2d9ff;border-right:3px solid var(--purple);
+}
+.questions{margin-top:1.1rem;}
+.q-item{
+  background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.25);
+  border-radius:10px;padding:.8rem 1rem;margin-bottom:.65rem;
+  font-size:.92rem;color:#ddd6fe;
+}
+.q-num{color:var(--gold);font-weight:800;margin-left:6px;}
+
+/* EXPERIMENTS */
+.exp-card{
+  background:var(--card);border:1px solid rgba(20,184,166,.35);
+  border-radius:16px;padding:1.35rem;margin-bottom:1.1rem;
+}
+.exp-head{display:flex;align-items:center;gap:12px;margin-bottom:.85rem;}
+.exp-num{
+  width:38px;height:38px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,#14b8a6,#0891b2);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:1rem;
+}
+.exp-title{font-size:1.08rem;font-weight:800;color:#5eead4;}
+.exp-sect{margin-bottom:.7rem;}
+.exp-sect-label{
+  font-size:.8rem;font-weight:700;color:var(--gold);
+  text-transform:uppercase;letter-spacing:.5px;margin-bottom:.35rem;
+}
+.tools-list{display:flex;flex-wrap:wrap;gap:7px;}
+.tool-chip{
+  background:rgba(20,184,166,.12);border:1px solid rgba(20,184,166,.3);
+  border-radius:20px;padding:4px 12px;font-size:.83rem;color:#99f6e4;
+}
+.steps-ol{list-style:none;counter-reset:step;padding-right:0;}
+.steps-ol li{
+  counter-increment:step;position:relative;
+  padding-right:2.2rem;margin-bottom:.45rem;
+  font-size:.92rem;color:#e2e8f0;line-height:1.65;
+}
+.steps-ol li::before{
+  content:counter(step);position:absolute;right:0;top:2px;
+  width:24px;height:24px;
+  background:linear-gradient(135deg,#14b8a6,#0891b2);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:.75rem;font-weight:800;color:#fff;
+}
+.required-box{
+  background:rgba(245,200,66,.08);border:1px solid rgba(245,200,66,.3);
+  border-radius:10px;padding:.65rem 1rem;margin-top:.8rem;
+  font-size:.9rem;color:#fde68a;
+}
+
+/* CONCEPTS */
+.concepts-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:.85rem;
+}
+.concept-card{
+  background:var(--card);border:1px solid rgba(236,72,153,.3);
+  border-radius:14px;padding:1.1rem;transition:.2s;
+}
+.concept-card:hover{border-color:rgba(236,72,153,.7);transform:translateY(-2px);}
+.c-num{
+  display:inline-flex;width:30px;height:30px;border-radius:50%;
+  background:linear-gradient(135deg,#ec4899,#7c3aed);
+  align-items:center;justify-content:center;
+  font-size:.82rem;font-weight:800;margin-bottom:.55rem;
+}
+.concept-q{font-size:.9rem;color:#fce7f3;line-height:1.65;margin-bottom:.55rem;}
+.concept-ans{
+  background:rgba(236,72,153,.1);border-radius:8px;
+  padding:5px 12px;font-size:.87rem;color:#f9a8d4;font-weight:700;
+  cursor:pointer;border:1px solid transparent;transition:.2s;text-align:center;
+}
+.concept-ans.revealed{
+  background:rgba(124,58,237,.2);border-color:#7c3aed;color:#c4b5fd;cursor:default;
+}
+
+/* UPLOAD BUTTONS */
+.upload-btn{
+  display:block;width:100%;max-width:360px;margin:1.1rem auto 0;
+  color:#fff;border:none;border-radius:14px;
+  padding:1rem 1.5rem;font-family:'Tajawal',sans-serif;
+  font-size:1.05rem;font-weight:700;cursor:pointer;
+  text-align:center;text-decoration:none;transition:.2s;
+}
+.upload-btn.purple{
+  background:linear-gradient(135deg,#7c3aed,#5b21b6);
+  box-shadow:0 4px 22px rgba(124,58,237,.4);
+}
+.upload-btn.purple:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(124,58,237,.6);}
+.upload-btn.teal{
+  background:linear-gradient(135deg,#14b8a6,#0891b2);
+  box-shadow:0 4px 22px rgba(20,184,166,.4);
+}
+.upload-btn.teal:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(20,184,166,.6);}
+.upload-btn.disabled{opacity:.45;cursor:not-allowed;background:linear-gradient(135deg,#7c3aed,#5b21b6);box-shadow:none;}
+.pending-note{
+  background:rgba(245,200,66,.07);border:1px dashed rgba(245,200,66,.35);
+  border-radius:10px;padding:.6rem 1rem;font-size:.83rem;color:#fde68a;
+  text-align:center;margin-top:.5rem;max-width:360px;margin-left:auto;margin-right:auto;
+}
+
+/* FOOTER */
+.footer-band{
+  background:linear-gradient(90deg,rgba(124,58,237,.2),rgba(20,184,166,.2));
+  border-top:1px solid rgba(124,58,237,.3);
+  padding:1.1rem;text-align:center;font-size:.88rem;color:#a78bfa;margin-top:2rem;
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="stars" id="stars"></div>
+  <div style="position:relative;z-index:1">
+    <div class="badge-top">★ مبادرة تعليمية ★</div>
+    <h1>تحدي العلوم الشامل</h1>
+    <div class="hero-sub">بإشراف المعلمة المتميزة</div>
+    <div class="hero-name">صفية القضيب</div>
+    <div class="motto">أنتِ البطلة... والتحدي لكِ وحدك! 🏆</div>
+    <p style="color:#94a3b8;font-size:.88rem">ثلاثة مجالات... وتحدٍّ واحد • لا تفوّتي الفرصة!</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="cta-bar">
+    <p>🎯 اجمعي النقاط... وارتقي للأعلى!</p>
+    <small>كوني الأفضل علمياً • تكريم للأوائل • جوائز قيّمة</small>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active-tab" onclick="showPanel('reading',this)">
+      <span class="tab-icon">📖</span>الفهم القرائي
+    </button>
+    <button class="tab" onclick="showPanel('experiments',this)">
+      <span class="tab-icon">🧪</span>التجارب العلمية
+    </button>
+    <button class="tab" onclick="showPanel('concepts',this)">
+      <span class="tab-icon">🧠</span>المفاهيم العلمية
+    </button>
+  </div>
+
+  <!-- ===== READING ===== -->
+  <div class="panel active" id="panel-reading">
+    <div class="section-title">📖 مجال الفهم القرائي</div>
+    <div class="read-card">
+      <h3>📄 النص العلمي — الجهاز العصبي والجلد</h3>
+      <div class="passage">
+        يتكوّن الجهاز العصبي من مليارات الخلايا العصبية التي تُسمى <strong style="color:#f5c842">الخلايا العصبونية</strong>، وهي الوحدات الوظيفية الأساسية التي تنقل الإشارات الكهربائية في الجسم. تتصل هذه الخلايا ببعضها عبر نقاط تُعرف بـ<strong style="color:#f5c842">المشابك العصبية</strong>، التي تمثّل المسافة القصيرة الفاصلة بين كل عصونين.
+        <br><br>
+        أمّا الجلد فهو أكبر أعضاء الجسم، ويتكوّن من طبقتين رئيسيتين: <strong style="color:#5eead4">البشرة</strong> (الطبقة الخارجية) و<strong style="color:#5eead4">الأدمة</strong>. تحتوي البشرة على صبغة تُسمى <strong style="color:#f9a8d4">الميلانين</strong> التي تحمي الجلد من أشعة الشمس وتكسبه لونه. يُغطّي العظامَ غشاءٌ صلب يُعرف بـ<strong style="color:#f9a8d4">السمحاق</strong>، الذي يغذّي العظم ويساعد على إصلاحه عند الكسر.
+      </div>
+      <div class="questions">
+        <h3>❓ أسئلة الفهم</h3>
+        <div class="q-item"><span class="q-num">١</span>ما الاسم العلمي للوحدات الوظيفية الأساسية في الجهاز العصبي؟</div>
+        <div class="q-item"><span class="q-num">٢</span>ما وظيفة المشابك العصبية في الجهاز العصبي؟</div>
+        <div class="q-item"><span class="q-num">٣</span>اذكري الفرق بين البشرة والأدمة.</div>
+        <div class="q-item"><span class="q-num">٤</span>ما الدور الذي تؤديه صبغة الميلانين في الجلد؟</div>
+        <div class="q-item"><span class="q-num">٥</span>ما الغشاء الذي يغطّي العظام وما أهميته؟</div>
+      </div>
+    </div>
+    <a href="#" class="upload-btn disabled" onclick="return false">📤 ارفعي إجاباتك هنا</a>
+    <div class="pending-note">⏳ الرابط قيد الإعداد... سيُفعَّل قريباً</div>
+  </div>
+
+  <!-- ===== EXPERIMENTS ===== -->
+  <div class="panel" id="panel-experiments">
+    <div class="section-title">🧪 مجال التجارب العلمية</div>
+
+    <div class="exp-card">
+      <div class="exp-head">
+        <div class="exp-num">١</div>
+        <div class="exp-title">نفخ البالون بدون نفخ 🎈</div>
+      </div>
+      <div class="exp-sect">
+        <div class="exp-sect-label">🔬 الفكرة</div>
+        <p style="font-size:.92rem;color:#e2e8f0;line-height:1.65">تفاعل كيميائي يُنتج غاز ثاني أكسيد الكربون يقوم بنفخ البالون تلقائياً.</p>
+      </div>
+      <div class="exp-sect">
+        <div class="exp-sect-label">🧰 الأدوات</div>
+        <div class="tools-list">
+          <span class="tool-chip">زجاجة بلاستيك</span>
+          <span class="tool-chip">بالون</span>
+          <span class="tool-chip">خل</span>
+          <span class="tool-chip">بيكربونات الصوديوم</span>
+          <span class="tool-chip">قمع</span>
+        </div>
+      </div>
+      <div class="exp-sect">
+        <div class="exp-sect-label">👩‍🔬 خطوات التنفيذ</div>
+        <ol class="steps-ol">
+          <li>املئي الزجاجة بالخل (حوالي نصفها)</li>
+          <li>ضعي بيكربونات الصوديوم داخل البالون</li>
+          <li>ثبّتي البالون على فوهة الزجاجة بدون إنزال البودرة</li>
+          <li>ارفعي البالون بحيث تنزل البيكربونات داخل الزجاجة</li>
+        </ol>
+      </div>
+      <div class="required-box">⭐ <strong>المطلوب:</strong> فيديو للتجربة + التفسير العلمي (ما الغاز المنتج؟ ولماذا ينفخ البالون؟)</div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-head">
+        <div class="exp-num">٢</div>
+        <div class="exp-title">كاشف الملفوف البنفسجي 🟣</div>
+      </div>
+      <div class="exp-sect">
+        <div class="exp-sect-label">🧰 الأدوات</div>
+        <div class="tools-list">
+          <span class="tool-chip">ملفوف بنفسجي</span>
+          <span class="tool-chip">ماء حار</span>
+          <span class="tool-chip">أكواب شفافة</span>
+          <span class="tool-chip">خل</span>
+          <span class="tool-chip">ليمون</span>
+          <span class="tool-chip">صابون</span>
+          <span class="tool-chip">بيكربونات</span>
+        </div>
+      </div>
+      <div class="exp-sect">
+        <div class="exp-sect-label">👩‍🔬 خطوات التنفيذ</div>
+        <ol class="steps-ol">
+          <li>قطّعي الملفوف وضعيه في ماء حار</li>
+          <li>اتركيه حتى يتلوّن الماء بالبنفسجي</li>
+          <li>صبّي السائل في أكواب منفصلة</li>
+          <li>أضيفي مواد مختلفة لكل كوب وراقبي التغيّر</li>
+        </ol>
+      </div>
+      <div class="required-box">⭐ <strong>المطلوب:</strong> فيديو للتجربة + التفسير العلمي لتغيّر لون الكاشف (الأحماض والقواعد)</div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-head">
+        <div class="exp-num">٣</div>
+        <div class="exp-title">بركان الصودا 🌋</div>
+      </div>
+      <div class="exp-sect">
+        <div class="exp-sect-label">🧰 الأدوات</div>
+        <div class="tools-list">
+          <span class="tool-chip">كوب أو قارورة</span>
+          <span class="tool-chip">بيكربونات الصوديوم</span>
+          <span class="tool-chip">خل</span>
+          <span class="tool-chip">لون طعام</span>
+          <span class="tool-chip">صابون سائل</span>
+        </div>
+      </div>
+      <div class="exp-sect">
+        <div class="exp-sect-label">👩‍🔬 خطوات التنفيذ</div>
+        <ol class="steps-ol">
+          <li>ضعي ملعقة بيكربونات داخل الكوب</li>
+          <li>أضيفي قطرات من لون الطعام</li>
+          <li>أضيفي قليلاً من الصابون السائل</li>
+          <li>اسكبي الخل فجأة وشاهدي البركان!</li>
+        </ol>
+      </div>
+      <div class="required-box">⭐ <strong>المطلوب:</strong> فيديو للتجربة + التفسير العلمي لحدوث الفوران</div>
+    </div>
+
+    <a href="https://forms.gle/tjaYAm88aq2CKYbj9" target="_blank" class="upload-btn teal">📤 ارفعي مشروع التجربة هنا ✅</a>
+  </div>
+
+  <!-- ===== CONCEPTS ===== -->
+  <div class="panel" id="panel-concepts">
+    <div class="section-title">🧠 مجال المفاهيم العلمية</div>
+    <p style="color:#94a3b8;font-size:.9rem;margin-bottom:1.1rem">اضغطي على كل بطاقة لكشف الإجابة — المطلوب منكِ كتابة المصطلح الصحيح</p>
+    <div class="concepts-grid" id="concepts-grid"></div>
+    <a href="#" class="upload-btn disabled" onclick="return false" style="margin-top:1.2rem">📤 ارفعي ورقة المفاهيم هنا</a>
+    <div class="pending-note">⏳ الرابط قيد الإعداد... سيُفعَّل قريباً</div>
+  </div>
+</div>
+
+<div class="footer-band">
+  🌟 مبادرة تحدي العلوم الشامل • إشراف: المعلمة صفية القضيب • لا تفوّتي الفرصة! 🌟
+</div>
+
+<script>
+const concepts = [
+  {q:"المسافة بين نقطة على الموجة وأقرب نقطة تتحرك بالسرعة والاتجاه نفسهما", a:"طول الموجة"},
+  {q:"وحدات وظيفية أساسية في الجهاز العصبي", a:"الخلايا العصبونية (النيورونات)"},
+  {q:"نقطة التقاء عظمين أو أكثر في الهيكل العظمي", a:"المفصل"},
+  {q:"صبغة تحمي الجلد وتكسبه لونه", a:"الميلانين"},
+  {q:"الطبقة الخارجية من الجلد", a:"البشرة (Epidermis)"},
+  {q:"غشاء صلب يغطّي العظم", a:"السمحاق (Periosteum)"},
+  {q:"الفترة الواقعة بين إخصاب البويضة حتى حدوث الولادة", a:"فترة الحمل"},
+  {q:"المسافة القصيرة التي تفصل بين كل عصونين", a:"المشبك العصبي (Synapse)"},
+  {q:"تغيّر اتجاه الموجة عند تغيّر سرعتها بسبب انتقالها من وسط لآخر", a:"انكسار الموجة"},
+  {q:"مجموع طاقتَي الوضع والحركة لجزيئات الجسم", a:"الطاقة الحرارية الداخلية"}
+];
+
+const grid = document.getElementById('concepts-grid');
+concepts.forEach((c, i) => {
+  const card = document.createElement('div');
+  card.className = 'concept-card';
+  card.innerHTML = `
+    <div class="c-num">${i + 1}</div>
+    <div class="concept-q">${c.q}</div>
+    <div class="concept-ans" id="ans-${i}" onclick="revealAns(${i}, '${c.a}')">اكشفي الإجابة 👁</div>
+  `;
+  grid.appendChild(card);
+});
+
+function revealAns(i, ans) {
+  const el = document.getElementById('ans-' + i);
+  el.textContent = ans;
+  el.classList.add('revealed');
+  el.onclick = null;
+}
+
+function showPanel(name, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active-tab'));
+  document.getElementById('panel-' + name).classList.add('active');
+  btn.classList.add('active-tab');
+}
+
+// Stars
+const s = document.getElementById('stars');
+for (let i = 0; i < 50; i++) {
+  const d = document.createElement('div');
+  d.className = 'star';
+  const sz = Math.random() * 2.5 + 1;
+  d.style.cssText = `width:${sz}px;height:${sz}px;top:${Math.random()*100}%;left:${Math.random()*100}%;animation-delay:${Math.random()*3}s;animation-duration:${1.5+Math.random()*2}s`;
+  s.appendChild(d);
+}
+</script>
+</body>
+</html>
